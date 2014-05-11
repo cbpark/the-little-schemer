@@ -234,14 +234,14 @@
 
 ;; length-1
 ((lambda (mk-length)
-     (mk-length mk-length))
-   (lambda (mk-length)
-     (lambda (l)
-       (cond
-        [(null? l) 0]
-        [else (add1
-               ((mk-length eternity)
-                (cdr l)))]))))
+   (mk-length mk-length))
+ (lambda (mk-length)
+   (lambda (l)
+     (cond
+      [(null? l) 0]
+      [else (add1
+             ((mk-length eternity)
+              (cdr l)))]))))
 
 ;; length
 ((lambda (mk-length)
@@ -290,7 +290,7 @@
       [(null? l) 0]
       [else (add1 (length (cdr l)))]))))
 
-;; Separate teh functions.
+;; Separate the functions.
 (lambda (le)
   ((lambda (mk-length)
      (mk-length mk-length))
